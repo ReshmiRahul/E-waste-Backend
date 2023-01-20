@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Recyclia.Data;
 
@@ -10,9 +11,10 @@ using Recyclia.Data;
 namespace Recyclia.Migrations
 {
     [DbContext(typeof(DataContextClass))]
-    partial class DataContextClassModelSnapshot : ModelSnapshot
+    [Migration("20230119183415_foodwastess")]
+    partial class foodwastess
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

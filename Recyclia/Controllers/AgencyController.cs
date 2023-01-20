@@ -143,6 +143,20 @@ namespace Recyclia.Controllers
             }
             return Ok(await customers.ToListAsync());
         }
+        [HttpGet("ViewMyCustomerFoodWasteRequests")]
+        public async Task<ActionResult> ViewMyCustomerFoodWasteRequests(int id)
+        {
+            var customers = from c in Agency.tbl_Agency
+                            join a in Agency.tbl_foodwaste
+                            on c.agency_district equals a.customer_district
+                            where c.agency_id == id
+                            select a;
+            if (customers == null)
+            {
+                return NotFound();
+            }
+            return Ok(await customers.ToListAsync());
+        }
     }
 
 }

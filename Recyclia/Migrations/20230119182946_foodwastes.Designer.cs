@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Recyclia.Data;
 
@@ -10,9 +11,10 @@ using Recyclia.Data;
 namespace Recyclia.Migrations
 {
     [DbContext(typeof(DataContextClass))]
-    partial class DataContextClassModelSnapshot : ModelSnapshot
+    [Migration("20230119182946_foodwastes")]
+    partial class foodwastes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -279,21 +281,6 @@ namespace Recyclia.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("fud_id"), 1L, 1);
-
-                    b.Property<string>("customer_district")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("customer_id")
-                        .HasColumnType("int");
-
-                    b.Property<string>("customer_name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("customer_phone")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("dates")
                         .IsRequired()
